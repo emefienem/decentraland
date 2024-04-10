@@ -13,7 +13,7 @@ import {
 
 const Header = () => {
   return (
-    <header className="relative p-5 flex bg-[#000]">
+    <header className="relative p-5 flex bg-[#000] justify-between">
       <div className="flex px-5">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -86,6 +86,14 @@ const Header = () => {
           </g>
         </svg>
         <Navigation />
+      </div>
+      <div>
+        <button className="text-white bg-transparent border border-white px-4 py-3">
+          Sign In
+        </button>
+        <button className="bg-[#ff2d55] w-[150px] py-2 text-center rounded-[10px] uppercase">
+          Jump In
+        </button>
       </div>
     </header>
   );

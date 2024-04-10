@@ -9,14 +9,14 @@ const BodyCarousel = () => {
     setActiveTab(tab);
   };
   return (
-    <div className="space-y-3 p-20">
-      <p className="text-[#a09ba8]">In Descentraland</p>
+    <div className="space-y-3 p-20  text-white">
+      <p className="text-[#a09ba8] text-xl">In Descentraland</p>
       <div className="flex">
         <div className="flex space-x-6">
           <h2
             className={`cursor-pointer ${
               activeTab === "Event" ? "text-white underline" : "text-gray-700"
-            } text-7xl `}
+            } text-6xl font-bold`}
             onClick={() => handleTabClick("Event")}
           >
             Event
@@ -24,7 +24,7 @@ const BodyCarousel = () => {
           <h2
             className={`cursor-pointer ${
               activeTab === "Event" ? "text-gray-700" : "text-white underline"
-            } text-7xl`}
+            } text-6xl font-bold`}
             onClick={() => handleTabClick("Place")}
           >
             Place
