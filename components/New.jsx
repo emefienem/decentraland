@@ -1,13 +1,16 @@
 import React from "react";
 import Image from "next/image";
+
 const New = () => {
   return (
-    <div className="p-20">
-      <h2 className="text-5xl font-semibold mb-12 text-white">What's new?</h2>
-      <div className="flex space-x-3">
-        <div>
+    <section className="p-5 pt-28 md:py-12 md:p-20">
+      <h2 className="text-3xl md:text-5xl font-semibold mb-12 text-white">
+        What's new?
+      </h2>
+      <div className="flex flex-row md:flex-row space-x-3 overflow-auto scrollbar-hide md:overflow-visible">
+        <div className="min-w-[90%] md:min-w-0 shrink-0 md:shrink">
           <Image
-            className="w-fit lg:min-w-[130px] h-36 object-cover object-center rounded-[16px] mb-6"
+            className="w-full md:w-fit lg:min-w-[130px] h-36 object-cover object-center rounded-[16px] mb-6"
             src="/New1.png"
             alt="whatisnew1"
             width={400}
@@ -25,9 +28,9 @@ const New = () => {
             </p>
           </div>
         </div>
-        <div>
+        <div className="min-w-full md:min-w-0 shrink-0 md:shrink">
           <Image
-            className="w-fit lg:min-w-[130px] h-36 object-cover object-center rounded-[16px] mb-6"
+            className="w-full md:w-fit lg:min-w-[130px] h-36 object-cover object-center rounded-[16px] mb-6"
             src="/New2.jpg"
             alt="whatisnew2"
             width={400}
@@ -46,9 +49,9 @@ const New = () => {
             </p>
           </div>
         </div>
-        <div>
+        <div className="min-w-full md:min-w-0 shrink-0 md:shrink">
           <Image
-            className="w-fit lg:min-w-[130px] h-36 object-cover object-center rounded-[16px] mb-6"
+            className="w-full md:w-fit lg:min-w-[130px] h-36 object-cover object-center rounded-[16px] mb-6"
             src="/New3.png"
             alt="whatisnew3"
             width={400}
@@ -66,9 +69,9 @@ const New = () => {
             </p>
           </div>
         </div>
-        <div>
+        <div className="min-w-full md:min-w-0 shrink-0 md:shrink">
           <Image
-            className="w-fit lg:min-w-[130px] h-36 object-cover object-center rounded-[16px] mb-6"
+            className="w-full md:w-fit lg:min-w-[130px] h-36 object-cover object-center rounded-[16px] mb-6"
             alt="whatisnew4"
             src="/New4.jpg"
             width={400}
@@ -88,7 +91,7 @@ const New = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

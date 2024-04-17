@@ -27,6 +27,7 @@ function CarouselBanner() {
       title: "2024 Manifesto",
       overview:
         "Driven by the central theme 'Forging Foundations for the Future, Decentraland's primary focus in 2024 will be the release of a new, powerful Desktop Client capable of supporting the platform's growth and future expansion into VR & mobile.",
+      text: "Read the manifesto",
     },
     {
       id: 3,
@@ -35,6 +36,7 @@ function CarouselBanner() {
       title: "SDK 7",
       overview:
         "The latest version of Decentraland's SDK improves usability, performance, and perfromance, and portability. Harness its power to create on a platform where control over your games and any revenue they generate is fully yours.",
+      text: "Learn more",
     },
     {
       id: 4,
@@ -43,11 +45,12 @@ function CarouselBanner() {
       title: "Smart Wearables",
       overview:
         "Turbo charge your creativity with Smart Wearables, enabling unique experiences that travel with your avatar as they explore Decentraland",
+      text: "Learn more",
     },
   ];
 
   return (
-    <div className="overflow-hidden relative" ref={emblaRef}>
+    <div className="overflow-hidden relative w-full" ref={emblaRef}>
       <div className="flex">
         {items.map((item) => (
           <div key={item.id} className="flex-full min-w-full relative">
@@ -57,7 +60,7 @@ function CarouselBanner() {
                 loop
                 muted
                 playsInline
-                className="w-full h-full object-cover"
+                className="h-full w-screen object-cover"
               >
                 <source src={item.src} type="video/mp4" />
                 Your browser does not support the video tag.
@@ -80,13 +83,13 @@ function CarouselBanner() {
               <div className="pt-10">
                 {item.id === 1 ? (
                   <div className="flex space-x-2">
-                    <div className="flex flex-col bg-[#ff2d55] border-[#ff2d55] min-w-[300px] pl-20 py-4 text-start rounded-[10px]">
+                    <div className="flex flex-col bg-[#ff2d55] border-[#ff2d55] min-w-[300px] pl-20 py-4 text-start rounded-[10px] transition duration-150 ease-in-out transform hover:-translate-y-1 cursor-pointer">
                       <p className="text[16px] font-[900] uppercase">
                         Jump in via browser
                       </p>
                       <p>Limited Experience</p>
                     </div>
-                    <div className="flex flex-col bg-transparent border border-white min-w-[300px] min-h-[20px] pl-20 py-4 text-start rounded-[10px]">
+                    <div className="flex flex-col bg-transparent border border-white min-w-[300px] min-h-[20px] pl-20 py-4 text-start rounded-[10px] transition duration-150 ease-in-out transform hover:-translate-y-1 cursor-pointer">
                       <p className="text[16px] font-[900] uppercase">
                         Download
                       </p>
@@ -96,40 +99,18 @@ function CarouselBanner() {
                 ) : (
                   ""
                 )}
-                {item.id === 2 ? (
-                  <div className="bg-[#ff2d55] border-[#ff2d55] w-[250px] py-4 text-center rounded-[10px]">
+                {item.text && (
+                  <div className="bg-[#ff2d55] border-[#ff2d55] w-[200px] py-4 text-center rounded-[10px] transition duration-150 ease-in-out transform hover:-translate-y-1 cursor-pointer">
                     <p className="text[16px] font-semibold uppercase">
-                      Read the manifesto
+                      {item.text}
                     </p>
                   </div>
-                ) : (
-                  ""
-                )}
-                {item.id === 3 ? (
-                  <div className="bg-[#ff2d55] border-[#ff2d55] w-[200px] py-4 text-center rounded-[10px]">
-                    <p className="text[16px] font-semibold uppercase">
-                      Learn more
-                    </p>
-                  </div>
-                ) : (
-                  ""
-                )}
-                {item.id === 4 ? (
-                  <div className="bg-[#ff2d55] border-[#ff2d55] w-[200px] py-4 text-center rounded-[10px]">
-                    <p className="text[16px] font-semibold uppercase">
-                      Learn more
-                    </p>
-                  </div>
-                ) : (
-                  ""
                 )}
               </div>
             </div>
           </div>
         ))}
       </div>
-
-      {/* <div className="absolute inset-0 bg-gradient-to-b from-gray-200/0 via-gray-900/25 to-gray-300 dark:to-[#1A1C29]" /> */}
     </div>
   );
 }

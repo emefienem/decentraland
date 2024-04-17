@@ -116,18 +116,18 @@ const Trending = () => {
   ];
   return (
     <>
-      <div className="text-white py-16 pt-28 p-28">
-        <div className="flex space-x-20 relative">
-          <h2 className="text-[70px] font-bold">Trending Items</h2>
-          <button className=" absolute border border-white bg-transparent uppercase px-8 py-2 right-64 mt-8 rounded-[4px]">
+      <div className="text-white md:py-16 py-8 md:pt-28 md:p-28 px-4">
+        <div className="flex flex-col md:flex-row space-y-3 md:space-x-20 relative">
+          <h2 className="text-2xl md:text-[70px] font-bold">Trending Items</h2>
+          <button className="md:absolute border border-white bg-transparent uppercase px-8 py-2 right-64 mt-8 rounded-[4px] transition duration-150 ease-in-out transform hover:-translate-y-1">
             Go to marketplace
           </button>
         </div>
-        <div className="z-50">
+        <div className="z-50 mt-10">
           <div className="flex space-x-4 overflow-scroll scrollbar-hide">
             {items.map((item) => (
               <div className="relative flex-shrink-0 cursor-pointer ">
-                <div className="absolute inset-0  z-10" />
+                <div className="absolute inset-0 z-10" />
                 <div className="flex">
                   <div className="max-w-2xl text-white">
                     <p className="absolute z-20 bottom-32 left-5 font-bold text-white uppercase text-xl">
@@ -143,7 +143,23 @@ const Trending = () => {
                       </span>
                     </div>
                     <div className="flex space-x-3 absolute bottom-[66px] left-5 ">
-                      <span>.</span>
+                      <span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          className="invert"
+                        >
+                          <path
+                            fill="#16141A"
+                            fill-rule="evenodd"
+                            d="m12 0 12 12-12 12L0 12 12 0Zm0 3.36L20.64 12 12 20.64 3.36 12 12 3.36Zm0 12.96a4.32 4.32 0 1 0 .001-8.64 4.32 4.32 0 0 0 0 8.64Z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </span>
                       <span>{item.score}</span>
                     </div>
                     <div
@@ -160,7 +176,7 @@ const Trending = () => {
                   </div>
                 </div>
                 <Image
-                  className="w-fit lg:w-[320px] h-96 rounded-xl bg-[#242129]"
+                  className="w-[300px] lg:w-[320px] h-96 rounded-xl bg-[#242129]"
                   src={item.src}
                   alt={item.title}
                   width={1920}
@@ -181,29 +197,29 @@ export default Trending;
 
 const Listings = () => {
   return (
-    <div className="flex space-x-4 pt-16">
+    <div className="flex flex-col md:flex-row md:space-y-0 space-y-3 md:space-x-4 pt-16 pb-16">
       <div className="relative">
         <Image
           src="/listings-map-background.webp"
           alt="Main Image 1"
           width={600}
           height={500}
-          className="object-cover w-fit lg:w-[600px] h-[480px] rounded-[13px] cursor-pointer"
+          className="object-cover w-fit lg:w-[600px] h-[400px] md:h-[480px] rounded-[13px] cursor-pointer"
         />
-        <div className="absolute top-[100px] left-36">
+        <div className="absolute top-14 md:top-[100px] left-20 md:left-36">
           <Image
             src="/listings-map.webp"
             alt="Inner Image 1"
             width={250}
             height={60}
-            className="object-cover cursor-pointer"
+            className="object-cover cursor-pointer w-[200px] md:w-[150px]"
           />
         </div>
         <div className="pl-12">
-          <p className="text-4xl absolute bottom-32 font-bold max-w-[550px] ">
+          <p className="text-2xl md:text-4xl absolute bottom-32 font-bold md:max-w-[550px] ">
             Browse LAND Available for Rent & Sale
           </p>
-          <button className="border border-white px-6 py-3 bg-transparent text-white absolute bottom-12 rounded-[5px] uppercase text-sm font-semibold">
+          <button className="border border-white px-6 py-3 bg-transparent text-white absolute bottom-12 rounded-[5px] uppercase text-sm font-semibold transition duration-150 ease-in-out transform hover:-translate-y-1">
             Show Listings
           </button>
         </div>
@@ -215,23 +231,23 @@ const Listings = () => {
           alt="Main Image 2"
           width={600}
           height={500}
-          className="object-cover w-fit lg:w-[600px] h-[480px] rounded-[13px] cursor-pointer"
+          className="object-cover w-fit lg:w-[600px] h-[400px] md:h-[480px] rounded-[13px] cursor-pointer"
         />
-        <div className="absolute top-[30px] left-36">
+        <div className="absolute top-14 md:top-[36px] left-20 md:left-36">
           <Image
             src="/listings-brand.webp"
             alt="Inner Image 2"
             width={250}
             height={60}
-            className="object-cover cursor-pointer"
+            className="object-cover cursor-pointer md:w-[200px] w-[150px]"
           />
         </div>
         <div className="pl-12">
-          <p className="text-4xl absolute bottom-32 font-bold max-w-[550px] ">
+          <p className="text-2xl md:text-4xl absolute bottom-32 font-bold max-w-[550px] ">
             Make your ideas a reality in the metaverse. Find a team to build
             with.
           </p>
-          <button className="border border-white px-6 py-3 bg-transparent text-white absolute bottom-12 rounded-[5px] uppercase text-sm font-semibold">
+          <button className="border border-white px-6 py-3 bg-transparent text-white absolute bottom-12 rounded-[5px] uppercase text-sm font-semibold transition duration-150 ease-in-out transform hover:-translate-y-1">
             Browse vetted studios
           </button>
         </div>

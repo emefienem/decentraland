@@ -8,7 +8,7 @@ import World from "@/components/World";
 
 export default function Home() {
   return (
-    <main className="h-full w-full">
+    <main className="w-full overflow-x-hidden md:overflow-x-visible">
       <CarouselBanner />
       <BodyCarousel />
       <New />
