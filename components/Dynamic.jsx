@@ -5,38 +5,35 @@ import { UseMultipleView } from "./UseMultipleView";
 import Image from "next/image";
 
 const Dynamic = () => {
-  const sections = useMemo(
-    () => [
-      {
-        id: 1,
-        title: "Create",
-        description:
-          "Decentraland is a world built by YOU where the only limit is your imagination. Create and sell Wearables & Emotes, construct captivating scenes and interactive experiences, or set up a personal space in your own World.",
-        src: "/dynamic1.png",
-        button1: "Discover the possibilities",
-        button2: "Creator DOCS",
-      },
-      {
-        id: 2,
-        title: "Experience",
-        description:
-          "The dynamic, virtual social world of Decentraland is home to a vibrant community hosting diverse daily events, ranging from parties, art exhibitions, fashion shows, music festivals, and more to interactive experiences from renown brands like Netflix, Doritos, and Samsung. Make friend, play games, explore, and discover all Decentraland has to offer!",
-        src: "/dynamic2.png",
-        button1: "Browse Events",
-        button2: "Explore Places",
-      },
-      {
-        id: 3,
-        title: "Influence",
-        description:
-          "As a fully decentralized metaverse, Decentraland is owned and governed by its users. Join the Decentraland DAO to submit and vote on proposals that affect how the world operates or secure funding for your ideas by applying for grants.",
-        src: "/dynamic3.png",
-        button1: "Learn More",
-        button2: "Get Involved",
-      },
-    ],
-    []
-  );
+  const sections = useMemo(() => [
+    {
+      id: 1,
+      title: "Create",
+      description:
+        "Decentraland is a world built by YOU where the only limit is your imagination. Create and sell Wearables & Emotes, construct captivating scenes and interactive experiences, or set up a personal space in your own World.",
+      src: "/dynamic1.png",
+      button1: "Discover the possibilities",
+      button2: "Creator DOCS",
+    },
+    {
+      id: 2,
+      title: "Experience",
+      description:
+        "The dynamic, virtual social world of Decentraland is home to a vibrant community hosting diverse daily events, ranging from parties, art exhibitions, fashion shows, music festivals, and more to interactive experiences from renown brands like Netflix, Doritos, and Samsung. Make friend, play games, explore, and discover all Decentraland has to offer!",
+      src: "/dynamic2.png",
+      button1: "Browse Events",
+      button2: "Explore Places",
+    },
+    {
+      id: 3,
+      title: "Influence",
+      description:
+        "As a fully decentralized metaverse, Decentraland is owned and governed by its users. Join the Decentraland DAO to submit and vote on proposals that affect how the world operates or secure funding for your ideas by applying for grants.",
+      src: "/dynamic3.png",
+      button1: "Learn More",
+      button2: "Get Involved",
+    },
+  ]);
 
   const [currentImage, setCurrentImage] = useState(sections[0].src);
 
@@ -52,6 +49,15 @@ const Dynamic = () => {
   //     setCurrentImage(inViewSection.src);
   //   }
   // }, [sections]);
+
+  // const sectionRefs = UseMultipleView(sections.length, { threshold: 0.5 });
+
+  // useEffect(() => {
+  //   const inViewSection = sectionRefs.find((ref) => ref.inView);
+  //   if (inViewSection) {
+  //     setCurrentImage(sections[sectionRefs.indexOf(inViewSection)].src);
+  //   }
+  // }, [sectionRefs]); // Only re-run the effect if sectionRefs change
 
   const sectionRefs = UseMultipleView(sections.length, { threshold: 0.5 });
 
