@@ -154,9 +154,9 @@ const Trending = () => {
                         >
                           <path
                             fill="#16141A"
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="m12 0 12 12-12 12L0 12 12 0Zm0 3.36L20.64 12 12 20.64 3.36 12 12 3.36Zm0 12.96a4.32 4.32 0 1 0 .001-8.64 4.32 4.32 0 0 0 0 8.64Z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                           />
                         </svg>
                       </span>

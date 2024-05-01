@@ -42,9 +42,12 @@ const Event = () => {
   ];
   return (
     <div className="z-50">
-      <div className="flex space-x-10 md:space-x-4 overflow-scroll px-0 md:px-5 lg:px-10 py-5 scrollbar-hide">
+      <div className="flex space-x-10 md:space-x-4 overflow-scroll px-0 py-5 scrollbar-hide">
         {items.map((item) => (
-          <div className="relative flex-shrink-0 cursor-pointer transform hover:scale-105 transition duration-200 ease-out">
+          <div
+            key={item.id}
+            className="relative flex-shrink-0 cursor-pointer transform hover:scale-105 transition duration-200 ease-out"
+          >
             <div className="absolute inset-0 bg-gradient-to-b from-gray-200/0 via-gray-900/10 to-[#1A1C29]/80 z-10" />
             <div className="flex">
               <div className="max-w-2xl text-white">

@@ -10,7 +10,7 @@ const BodyCarousel = () => {
     setActiveTab(tab);
   };
   return (
-    <section className="w-full space-y-3 p-5 pt-20  md:p-20 text-white relative">
+    <section className="w-full space-y-3 p-5 pt-20 md:p-20 text-white relative">
       <p className="text-[#a09ba8] text-sm md:text-xl">In Descentraland</p>
       <div className="flex flex-row md:flex-col">
         <div className="flex space-x-10 md:space-x-6">

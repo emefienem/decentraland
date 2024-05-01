@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import {
   NavigationMenu,
@@ -8,13 +8,13 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { UserAuth } from "@/app/context/Auth";
 import { notification } from "antd";
 
 const Header = () => {
   const { user, googleSignIn, logOut } = UserAuth();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleSignIn = async () => {
     try {
@@ -34,7 +34,29 @@ const Header = () => {
 
   return (
     <header className="relative p-5 flex bg-[#000] justify-between">
+      {/* Toggle Button for Mobile */}
+      <button
+        className="md:hidden p-2 text-white"
+        onClick={() => setMenuOpen(menuOpen)}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3.75 9h16.5m-16.5 6.75h16.5"
+          />
+        </svg>
+      </button>
+
       <div className="flex px-5">
+        {/* Link for logo  */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="36"
@@ -73,7 +95,7 @@ const Header = () => {
               <stop offset="100%" stop-color="#FF2D55" />
             </linearGradient>
           </defs>
-          <g fill="none" fill-rule="evenodd">
+          <g fill="none" fillRule="evenodd">
             <circle cx="18" cy="18" r="18" fill="url(#prefix__a)" />
             <g transform="translate(1.44 11.7)">
               <polygon
@@ -105,7 +127,226 @@ const Header = () => {
             <circle cx="12.753" cy="6.75" r="2.25" fill="#FFC95B" />
           </g>
         </svg>
-        <Navigation />
+        <nav className={`md:block ${menuOpen ? "block" : "hidden"}`}>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent border-none text-white text-[15px]">
+                  MarketPlace
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="bg-[#000] text-white">
+                  <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                    <li className="row-span-3">
+                      <NavigationMenuLink asChild className="text-white">
+                        <a
+                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                          href="/"
+                        >
+                          <div className="mb-2 mt-4 text-lg font-medium">
+                            shadcn/ui
+                          </div>
+                          <p className="text-sm leading-tight text-muted-foreground text-white">
+                            Beautifully designed components that you can copy
+                            and paste into your apps. Accessible. Customizable.
+                            Open Source.
+                          </p>
+                        </a>
+                      </NavigationMenuLink>
+                    </li>
+                    <ListItem
+                      href="/docs"
+                      title="Introduction"
+                      className="text-white"
+                    >
+                      Re-usable components built using Radix UI and Tailwind
+                      CSS.
+                    </ListItem>
+                    <ListItem
+                      href="/docs/installation"
+                      title="Installation"
+                      className="text-white"
+                    >
+                      How to install dependencies and structure your app.
+                    </ListItem>
+                    <ListItem
+                      href="/docs/primitives/typography"
+                      title="Typography"
+                      className="text-white"
+                    >
+                      Styles for headings, paragraphs, lists...etc
+                    </ListItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent border-none text-white text-[15px]">
+                  Create
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="bg-[#000] text-white">
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                    {components.map((component) => (
+                      <ListItem
+                        key={component.title}
+                        title={component.title}
+                        href={component.href}
+                        className="text-white"
+                      >
+                        {component.description}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent border-none text-white text-[15px]">
+                  Explore
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="bg-[#000] text-white">
+                  <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                    <li className="row-span-3">
+                      <NavigationMenuLink asChild className="text-white">
+                        <a
+                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                          href="/"
+                        >
+                          {/* <Icons.logo className="h-6 w-6" /> Place your logo here */}
+                          <div className="mb-2 mt-4 text-lg font-medium text-white">
+                            shadcn/ui
+                          </div>
+                          <p className="text-sm leading-tight text-muted-foreground text-white">
+                            Beautifully designed components that you can copy
+                            and paste into your apps. Accessible. Customizable.
+                            Open Source.
+                          </p>
+                        </a>
+                      </NavigationMenuLink>
+                    </li>
+                    <ListItem
+                      href="/docs"
+                      title="Introduction"
+                      className="text-white"
+                    >
+                      Re-usable components built using Radix UI and Tailwind
+                      CSS.
+                    </ListItem>
+                    <ListItem
+                      href="/docs/installation"
+                      title="Installation"
+                      className="text-white"
+                    >
+                      How to install dependencies and structure your app.
+                    </ListItem>
+                    <ListItem
+                      href="/docs/primitives/typography"
+                      title="Typography"
+                      className="text-white"
+                    >
+                      Styles for headings, paragraphs, lists...etc
+                    </ListItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent border-none text-white text-[15px]">
+                  Learn
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="bg-[#000] text-white">
+                  <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                    <li className="row-span-3">
+                      <NavigationMenuLink asChild className="text-white">
+                        <a
+                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                          href="/"
+                        >
+                          {/* <Icons.logo className="h-6 w-6" /> Place your logo here */}
+                          <div className="mb-2 mt-4 text-lg font-medium text-white">
+                            shadcn/ui
+                          </div>
+                          <p className="text-sm leading-tight  text-white">
+                            Beautifully designed components that you can copy
+                            and paste into your apps. Accessible. Customizable.
+                            Open Source.
+                          </p>
+                        </a>
+                      </NavigationMenuLink>
+                    </li>
+                    <ListItem
+                      href="/docs"
+                      title="Introduction"
+                      className="text-white"
+                    >
+                      Re-usable components built using Radix UI and Tailwind
+                      CSS.
+                    </ListItem>
+                    <ListItem
+                      href="/docs/installation"
+                      title="Installation"
+                      className="text-white"
+                    >
+                      How to install dependencies and structure your app.
+                    </ListItem>
+                    <ListItem
+                      href="/docs/primitives/typography"
+                      title="Typography"
+                      className="text-white"
+                    >
+                      Styles for headings, paragraphs, lists...etc
+                    </ListItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent border-none text-white text-[15px]">
+                  Governance
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="bg-[#000] className='text-white'">
+                  <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                    <li className="row-span-3">
+                      <NavigationMenuLink asChild className="text-white">
+                        <a
+                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                          href="/"
+                        >
+                          {/* <Icons.logo className="h-6 w-6" /> Place your logo here */}
+                          <div className="mb-2 mt-4 text-lg font-medium">
+                            shadcn/ui
+                          </div>
+                          <p className="text-sm leading-tight  text-white">
+                            Beautifully designed components that you can copy
+                            and paste into your apps. Accessible. Customizable.
+                            Open Source.
+                          </p>
+                        </a>
+                      </NavigationMenuLink>
+                    </li>
+                    <ListItem
+                      href="/docs"
+                      title="Introduction"
+                      className="text-white"
+                    >
+                      Re-usable components built using Radix UI and Tailwind
+                      CSS.
+                    </ListItem>
+                    <ListItem
+                      href="/docs/installation"
+                      title="Installation"
+                      className="text-white"
+                    >
+                      How to install dependencies and structure your app.
+                    </ListItem>
+                    <ListItem
+                      href="/docs/primitives/typography"
+                      title="Typography"
+                      className="text-white"
+                    >
+                      Styles for headings, paragraphs, lists...etc
+                    </ListItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </nav>
       </div>
 
       {!user ? (
@@ -118,7 +359,7 @@ const Header = () => {
           </button>
           <button
             onClick={handleSignIn}
-            className="bg-[#ff2d55] px-8 py-3 text-center rounded-[6px] uppercase text-white text-[14px] font-semibold"
+            className="bg-[#ff2d55] px-8 py-3 text-center rounded-[6px] uppercase text-white text-[14px] font-semibold hidden md:inline"
           >
             Jump In
           </button>
@@ -145,6 +386,7 @@ const Header = () => {
               </g>
             </svg>
           </div>
+
           <div className="flex mt-3 space-x-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -161,6 +403,7 @@ const Header = () => {
             </svg>
             <span className="text-[12px]">0</span>
           </div>
+
           <div className="flex mt-3 space-x-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -172,16 +415,18 @@ const Header = () => {
             >
               <path
                 fill="#16141A"
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="m12 0 12 12-12 12L0 12 12 0Zm0 3.36L20.64 12 12 20.64 3.36 12 12 3.36Zm0 12.96a4.32 4.32 0 1 0 .001-8.64 4.32 4.32 0 0 0 0 8.64Z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
             <span className="text-[12px]">0</span>
           </div>
+
           <div className="border-none rounded-[50%] rounded-b-2xl bg-gray-500 ">
             <Image src="/authlogo.png" width={40} height={30} />
           </div>
+
           <button
             onClick={handleSignOut}
             className="text-white bg-transparent border border-white px-8 py-3 rounded-[6px] uppercase text-[14px] font-semibold transition duration-150 ease-in-out transform hover:-translate-y-1"
@@ -233,226 +478,6 @@ const components = [
       "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
   },
 ];
-
-const Navigation = () => {
-  return (
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-transparent border-none text-white text-[15px]">
-            MarketPlace
-          </NavigationMenuTrigger>
-          <NavigationMenuContent className="bg-[#000] text-white">
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-3">
-                <NavigationMenuLink asChild className="text-white">
-                  <a
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                    href="/"
-                  >
-                    {/* <Icons.logo className="h-6 w-6" /> Place your logo here */}
-                    <div className="mb-2 mt-4 text-lg font-medium">
-                      shadcn/ui
-                    </div>
-                    <p className="text-sm leading-tight text-muted-foreground text-white">
-                      Beautifully designed components that you can copy and
-                      paste into your apps. Accessible. Customizable. Open
-                      Source.
-                    </p>
-                  </a>
-                </NavigationMenuLink>
-              </li>
-              <ListItem
-                href="/docs"
-                title="Introduction"
-                className="text-white"
-              >
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem
-                href="/docs/installation"
-                title="Installation"
-                className="text-white"
-              >
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem
-                href="/docs/primitives/typography"
-                title="Typography"
-                className="text-white"
-              >
-                Styles for headings, paragraphs, lists...etc
-              </ListItem>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-transparent border-none text-white text-[15px]">
-            Create
-          </NavigationMenuTrigger>
-          <NavigationMenuContent className="bg-[#000] text-white">
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                  className="text-white"
-                >
-                  {component.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-transparent border-none text-white text-[15px]">
-            Explore
-          </NavigationMenuTrigger>
-          <NavigationMenuContent className="bg-[#000] text-white">
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-3">
-                <NavigationMenuLink asChild className="text-white">
-                  <a
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                    href="/"
-                  >
-                    {/* <Icons.logo className="h-6 w-6" /> Place your logo here */}
-                    <div className="mb-2 mt-4 text-lg font-medium text-white">
-                      shadcn/ui
-                    </div>
-                    <p className="text-sm leading-tight text-muted-foreground text-white">
-                      Beautifully designed components that you can copy and
-                      paste into your apps. Accessible. Customizable. Open
-                      Source.
-                    </p>
-                  </a>
-                </NavigationMenuLink>
-              </li>
-              <ListItem
-                href="/docs"
-                title="Introduction"
-                className="text-white"
-              >
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem
-                href="/docs/installation"
-                title="Installation"
-                className="text-white"
-              >
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem
-                href="/docs/primitives/typography"
-                title="Typography"
-                className="text-white"
-              >
-                Styles for headings, paragraphs, lists...etc
-              </ListItem>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-transparent border-none text-white text-[15px]">
-            Learn
-          </NavigationMenuTrigger>
-          <NavigationMenuContent className="bg-[#000] text-white">
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-3">
-                <NavigationMenuLink asChild className="text-white">
-                  <a
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                    href="/"
-                  >
-                    {/* <Icons.logo className="h-6 w-6" /> Place your logo here */}
-                    <div className="mb-2 mt-4 text-lg font-medium text-white">
-                      shadcn/ui
-                    </div>
-                    <p className="text-sm leading-tight  text-white">
-                      Beautifully designed components that you can copy and
-                      paste into your apps. Accessible. Customizable. Open
-                      Source.
-                    </p>
-                  </a>
-                </NavigationMenuLink>
-              </li>
-              <ListItem
-                href="/docs"
-                title="Introduction"
-                className="text-white"
-              >
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem
-                href="/docs/installation"
-                title="Installation"
-                className="text-white"
-              >
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem
-                href="/docs/primitives/typography"
-                title="Typography"
-                className="text-white"
-              >
-                Styles for headings, paragraphs, lists...etc
-              </ListItem>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-transparent border-none text-white text-[15px]">
-            Governance
-          </NavigationMenuTrigger>
-          <NavigationMenuContent className="bg-[#000] className='text-white'">
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-3">
-                <NavigationMenuLink asChild className="text-white">
-                  <a
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                    href="/"
-                  >
-                    {/* <Icons.logo className="h-6 w-6" /> Place your logo here */}
-                    <div className="mb-2 mt-4 text-lg font-medium">
-                      shadcn/ui
-                    </div>
-                    <p className="text-sm leading-tight  text-white">
-                      Beautifully designed components that you can copy and
-                      paste into your apps. Accessible. Customizable. Open
-                      Source.
-                    </p>
-                  </a>
-                </NavigationMenuLink>
-              </li>
-              <ListItem
-                href="/docs"
-                title="Introduction"
-                className="text-white"
-              >
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem
-                href="/docs/installation"
-                title="Installation"
-                className="text-white"
-              >
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem
-                href="/docs/primitives/typography"
-                title="Typography"
-                className="text-white"
-              >
-                Styles for headings, paragraphs, lists...etc
-              </ListItem>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
-  );
-};
 
 const ListItem = React.forwardRef(
   ({ className, title, children, ...props }, ref) => {
