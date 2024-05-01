@@ -424,7 +424,7 @@ const Header = () => {
           </div>
 
           <div className="border-none rounded-[50%] rounded-b-2xl bg-gray-500 ">
-            <Image src="/authlogo.png" width={40} height={30} />
+            <Image src="/authlogo.png" alt="User" width={40} height={30} />
           </div>
 
           <button
@@ -506,7 +506,7 @@ const Notification = () => {
   const openNotification = () => {
     const btn = (
       <button className="border border-white bg-transparent text-white py-1 px-2 hover:bg-white hover:text-black transition duration-300">
-        Let's begin
+        Let&apos;s begin
       </button>
     );
 
@@ -518,7 +518,7 @@ const Notification = () => {
       ),
       description: (
         <div style={{ color: "white" }}>
-          Never miss a thing! Now, you'll receive a notification each time
+          Never miss a thing! Now, you&apos;ll receive a notification each time
           something relevant happens with your account
         </div>
       ),

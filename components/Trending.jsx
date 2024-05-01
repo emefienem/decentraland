@@ -126,7 +126,10 @@ const Trending = () => {
         <div className="z-50 mt-10">
           <div className="flex space-x-4 overflow-scroll scrollbar-hide">
             {items.map((item) => (
-              <div className="relative flex-shrink-0 cursor-pointer ">
+              <div
+                key={item.id}
+                className="relative flex-shrink-0 cursor-pointer "
+              >
                 <div className="absolute inset-0 z-10" />
                 <div className="flex">
                   <div className="max-w-2xl text-white">

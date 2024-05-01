@@ -21,7 +21,7 @@ const New = () => {
   return (
     <section className="relative p-5 pt-28 md:pt-20 pb-14 md:pb-0 md:py-12 md:p-20">
       <h2 className="text-3xl md:text-5xl font-semibold mb-12 text-white">
-        What's new?
+        What&apos;s new?
       </h2>
       <div
         ref={scrollContainer}
@@ -45,7 +45,7 @@ const New = () => {
               </p>
             </div>
             <p className="text-white w-[320px] text-xl font-bold">
-              The Ultimate Guide to <br /> Decentraland Art Week '24
+              The Ultimate Guide to <br /> Decentraland Art Week &apos;24
             </p>
           </div>
         </div>

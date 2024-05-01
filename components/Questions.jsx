@@ -14,8 +14,8 @@ const Questions = () => {
           applications as well as socialize and attend a wide range of daily,
           community-driven events. Decentraland is unique in that it is owned,
           created, and governed by the people who use it everyday. Through
-          Decentraland's decentralized autonomous organization (DAO) users can
-          submit and vote on{" "}
+          Decentraland&apos;s decentralized autonomous organization (DAO) users
+          can submit and vote on{" "}
           <span className="underline text-red-500">proposals</span> and even
           apply for <span className="underline text-red-500">grants</span> for
           the community to vote on
@@ -29,43 +29,45 @@ const Questions = () => {
         <p className="p-[25px] md:p-0 md:pl-[37px] pt-5 pb-16 md:pb-16 max-w-[950px] text-[15px] font-semibold">
           Step 1: Choose where to enter Decentraland You can enter Decentraland
           via the default starting location, Genesis Plaza, by going to
-          https://play.decentraland.org/ (If it’s your first time trying out
-          Decentraland, you’ll first complete a short tutorial experience).
-          Alternatively, you can enter Decentraland directly in your area of
-          interest via an Event page link (just click 'Jump In' at the bottom of
-          the event listing you're interested in) or via the Places page. <br />{" "}
-          <br />
+          https://play.decentraland.org/ (If it&apos;s your first time trying
+          out Decentraland, you&apos;ll first complete a short tutorial
+          experience). Alternatively, you can enter Decentraland directly in
+          your area of interest via an Event page link (just click &apos;Jump
+          In&apos; at the bottom of the event listing you&apos;re interested in)
+          or via the Places page. <br /> <br />
           Step 2: Play Using Your Wallet or Play as a Guest When you enter
-          Decentraland, you’ll have to decide whether to do so with or without a
-          crypto wallet. This essentially means deciding whether to create a
-          Decentraland account (which requires connecting a crypto wallet—it
-          doesn’t have to have money in it) or to visit Decentraland as a guest.
-          If you make an account you can permanently save your avatar for return
-          visits, make Event listings, claim free Wearables at events, try out
-          different Wearables & Emotes in the Marketplace, and buy your
-          favorites. If you don't already have a crypto wallet to connect to
-          your account, you can get one quickly and at no cost, it's as easy as
-          signing up for a new email. Learn more here. <br /> <br />
-          Step 3: Customize Your Avatar Once you enter Decentraland you’ll first
-          be asked to customize your avatar to represent the metaverse version
-          of yourself (be whoever you want to be!). If you can’t find what
-          you’re looking for in the free starter options, take a look in the
-          Marketplace and browse community creations for the perfect outfit.{" "}
-          <br /> <br />
+          Decentraland, you&apos;ll have to decide whether to do so with or
+          without a crypto wallet. This essentially means deciding whether to
+          create a Decentraland account (which requires connecting a crypto
+          wallet—it doesn&apos;t have to have money in it) or to visit
+          Decentraland as a guest. If you make an account you can permanently
+          save your avatar for return visits, make Event listings, claim free
+          Wearables at events, try out different Wearables & Emotes in the
+          Marketplace, and buy your favorites. If you do&apos;t already have a
+          crypto wallet to connect to your account, you can get one quickly and
+          at no cost, it&apos;s as easy as signing up for a new email. Learn
+          more here. <br /> <br />
+          Step 3: Customize Your Avatar Once you enter Decentraland you&apos;ll
+          first be asked to customize your avatar to represent the metaverse
+          version of yourself (be whoever you want to be!). If you can’t find
+          what you&apos;re looking for in the free starter options, take a look
+          in the Marketplace and browse community creations for the perfect
+          outfit. <br /> <br />
           Step 4: Familiarize Yourself with the Basics & Explore After
           completing a quick tutorial on how to control your avatar,
           Decentraland is yours to explore! To change your outfit, adjust
           settings, see the Decentraland map, or browse through events and
           places of interest in-world, just click on the profile bubble showing
-          your avatar in the top right corner. Here are some commands you'll
-          find useful: Keyboard W-A-S-D/Arrows: Move Spacebar: Jump X: Pull up
-          event interface M: Open map V: Third person view B: Emote options U:
-          Remove user interface Enter: Open the chat box Chat box (Commands you
-          type into the chat box and hit ‘Enter’) /goto xx,xx (e.g. /goto
-          47,-110): Teleports you to specific coordinates /goto crowd: Teleports
-          you to a random busy area /help: Lists all other available commands
-          Step 5: Have fun! You're all set. Walk around, talk to others via the
-          chat box on the bottom left, and pop into some events!
+          your avatar in the top right corner. Here are some commands
+          you&apos;ll find useful: Keyboard W-A-S-D/Arrows: Move Spacebar: Jump
+          X: Pull up event interface M: Open map V: Third person view B: Emote
+          options U: Remove user interface Enter: Open the chat box Chat box
+          (Commands you type into the chat box and hit &apos;Enter&apos;) /goto
+          xx,xx (e.g. /goto 47,-110): Teleports you to specific coordinates
+          /goto crowd: Teleports you to a random busy area /help: Lists all
+          other available commands Step 5: Have fun! You're all set. Walk
+          around, talk to others via the chat box on the bottom left, and pop
+          into some events!
         </p>
       ),
     },
@@ -79,14 +81,14 @@ const Questions = () => {
           free to use. If you decide to purchase a community-made creation from
           the Marketplace, there are multiple payment options available, such as
           credit/debit card and bank transfer in addition to various
-          cryptocurrencies. As for owning a digital wallet, if you don't already
-          have one, you don't need to get one yourself if you don't want to.
-          When you sign-in to Decentraland for the first time—creating your
-          account—a digital wallet will be created for you behind the scenes,
-          it's as simple as that! This digital wallet is part of your
-          Decentraland account and is used to store any digital assets you
-          acquire, such as free Wearables you might claim in-world or a fun
-          Emote you purchase in the Marketplace.
+          cryptocurrencies. As for owning a digital wallet, if you don&apos;t
+          already have one, you don&apos;t need to get one yourself if you
+          don&apos;t want to. When you sign-in to Decentraland for the first
+          time—creating your account—a digital wallet will be created for you
+          behind the scenes, it&apos;s as simple as that! This digital wallet is
+          part of your Decentraland account and is used to store any digital
+          assets you acquire, such as free Wearables you might claim in-world or
+          a fun Emote you purchase in the Marketplace.
         </p>
       ),
     },
@@ -115,7 +117,7 @@ const Questions = () => {
           and drop into place. Just about everything you might need to know
           about scene, experience, or game creation in Decentraland can be found
           on the <span className="underline text-red-500">Docs</span> page.
-          There you’ll find step-by-step guides,{" "}
+          There you&apos;ll find step-by-step guides,{" "}
           <span className="underline text-red-500">video tutorials</span>, and
           the <span className="underline text-red-500">Awesome Repository</span>{" "}
           which has tons of templates, mechanics, animations, and much more to
@@ -153,11 +155,11 @@ const Questions = () => {
           <span className="uppercase text-red-500">renting</span> renting LAND
           will be a better option. <br /> <br /> Scenes and experiences deployed
           on LANDs in Genesis City are also more easily discovered by users as
-          they don’t need to know specific information like your NAME to
+          they don&apos;t need to know specific information like your NAME to
           visit—they can just stumble upon your scene while exploring. On the
-          other hand, if privacy is what you’re looking for, then a World might
-          be just the thing for you. <br /> <br /> Additionally, Worlds do not
-          grant you the same amount of{" "}
+          other hand, if privacy is what you&apos;re looking for, then a World
+          might be just the thing for you. <br /> <br /> Additionally, Worlds do
+          not grant you the same amount of{" "}
           <span className="uppercase text-red-500">DAO Voting Power</span> as
           LAND parcels. The NAME attached to your World grants you 100 Voting
           Power whereas 1 LAND parcel grants 2000 Voting Power.

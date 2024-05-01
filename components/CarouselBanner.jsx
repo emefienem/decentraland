@@ -145,10 +145,10 @@ const CarouselBanner = () => {
               2024 Manifesto
             </p>
             <p className="w-full md:w-[550px] text-sm md:text-xl space-y-2 font-medium pt-4 md:pt-8 pb-2 md:pb-6 leading-7 md:leading-normal">
-              Driven by the central theme 'Forging Foundations for the Future,
-              Decentraland's primary focus in 2024 will be the release of a new,
-              powerful Desktop Client capable of supporting the platform's
-              growth and future expansion into VR & mobile.
+              Driven by the central theme &apos;Forging Foundations for the
+              Future, Decentraland&apos;s primary focus in 2024 will be the
+              release of a new, powerful Desktop Client capable of supporting
+              the platform's growth and future expansion into VR & mobile.
             </p>
             <div className="bg-[#ff2d55] border-[#ff2d55] w-full md:w-[200px] py-4 text-center rounded-[10px] transition duration-150 ease-in-out transform hover:-translate-y-1 cursor-pointer">
               <p className="text[16px] font-semibold uppercase">
@@ -171,7 +171,7 @@ const CarouselBanner = () => {
           <div className="lg:inline absolute mt-0 top-0 left-0 pt-24 md:pt-28 lg:mt-1 bg-transparent z-20 h-full w-full space-y-2 p-5 md:p-28 text-white">
             <p className="text-5xl md:text-[100px] font-bold z-50">SDK7</p>
             <p className=" w-full md:w-[550px] text-sm md:text-xl space-y-2 font-medium pt-4 md:pt-8 pb-2 md:pb-6 leading-7 md:leading-normal">
-              The latest version of Decentraland's SDK improves usability,
+              The latest version of Decentraland&apos;s SDK improves usability,
               performance, and perfromance, and portability. Harness its power
               to create on a platform where control over your games and any
               revenue they generate is fully yours.

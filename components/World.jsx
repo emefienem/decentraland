@@ -13,8 +13,8 @@ const World = () => {
           <p className="text-[16px] md:text-[25px] md:max-w-[600px] pt-36 md:pt-4">
             With just a Decentraland NAME you can claim your own corner of the
             metaverse, separate from the open world of Decentraland, where you
-            can build, experiment, host events--whatever you want, it's your
-            World!
+            can build, experiment, host events--whatever you want, it&apos;s
+            your World!
           </p>
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-3 md:pt-0 pt-4">
             <button className="font-semibold bg-white text-black py-4 px-[70px] uppercase rounded-[7px] text-[16px] transition duration-150 ease-in-out transform hover:-translate-y-1">

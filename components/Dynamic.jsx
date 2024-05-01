@@ -1,62 +1,92 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 
 const Dynamic = () => {
-  const sections = [
-    {
-      id: 1,
-      title: "Create",
-      description:
-        "Decentraland is a world built by YOU where the only limit is your imagination. Create and sell Wearables & Emotes, construct captivating scenes and interactive experiences, or set up a personal space in your own World.",
-      src: "/dynamic1.png",
-      button1: "Discover the possibilities",
-      button2: "Creator DOCS",
-    },
-    {
-      id: 2,
-      title: "Experience",
-      description:
-        "The dynamic, virtual social world of Decentraland is home to a vibrant community hosting diverse daily events, ranging from parties, art exhibitions, fashion shows, music festivals, and more to interactive experiences from renown brands like Netflix, Doritos, and Samsung. Make friend, play games, explore, and discover all Decentraland has to offer!",
-      src: "/dynamic2.png",
-      button1: "Browse Events",
-      button2: "Explore Places",
-    },
-    {
-      id: 3,
-      title: "Influence",
-      description:
-        "As a fully decentralized metaverse, Decentraland is owned and governed by its users. Join the Decentraland DAO to submit and vote on proposals that affect how the world operates or secure funding for your ideas by applying for grants.",
-      src: "/dynamic3.png",
-      button1: "Learn More",
-      button2: "Get Involved",
-    },
-  ];
+  const sections = useMemo(
+    () => [
+      {
+        id: 1,
+        title: "Create",
+        description:
+          "Decentraland is a world built by YOU where the only limit is your imagination. Create and sell Wearables & Emotes, construct captivating scenes and interactive experiences, or set up a personal space in your own World.",
+        src: "/dynamic1.png",
+        button1: "Discover the possibilities",
+        button2: "Creator DOCS",
+      },
+      {
+        id: 2,
+        title: "Experience",
+        description:
+          "The dynamic, virtual social world of Decentraland is home to a vibrant community hosting diverse daily events, ranging from parties, art exhibitions, fashion shows, music festivals, and more to interactive experiences from renown brands like Netflix, Doritos, and Samsung. Make friend, play games, explore, and discover all Decentraland has to offer!",
+        src: "/dynamic2.png",
+        button1: "Browse Events",
+        button2: "Explore Places",
+      },
+      {
+        id: 3,
+        title: "Influence",
+        description:
+          "As a fully decentralized metaverse, Decentraland is owned and governed by its users. Join the Decentraland DAO to submit and vote on proposals that affect how the world operates or secure funding for your ideas by applying for grants.",
+        src: "/dynamic3.png",
+        button1: "Learn More",
+        button2: "Get Involved",
+      },
+    ],
+    []
+  );
 
   const [currentImage, setCurrentImage] = useState(sections[0].src);
 
-  sections.forEach((section) => {
-    section.ref = useInView({
+  // sections.forEach((section) => {
+  //   section.ref = useInView({
+  //     threshold: 0.5,
+  //   });
+  // });
+
+  // useEffect(() => {
+  //   const inViewSection = sections.find((section) => section.ref.inView);
+  //   if (inViewSection) {
+  //     setCurrentImage(inViewSection.src);
+  //   }
+  // }, [sections]);
+
+  const sectionRefs = sections.map(() =>
+    useInView({
       threshold: 0.5,
-    });
-  });
+    })
+  );
+
+  // Map refs back to sections
+  const sectionsWithRefs = useMemo(
+    () =>
+      sections.map((section, index) => ({
+        ...section,
+        ref: sectionRefs[index].ref,
+      })),
+    [sections, sectionRefs]
+  );
 
   useEffect(() => {
-    const inViewSection = sections.find((section) => section.ref.inView);
+    const inViewSection = sectionsWithRefs.find(
+      (section, index) => sectionRefs[index].inView
+    );
     if (inViewSection) {
       setCurrentImage(inViewSection.src);
     }
-  }, [sections]);
+  }, [sectionRefs]); // Only re-run the effect if sectionRefs change
 
   return (
     <>
       <div className="flex flex-row md:pt-2 py-0 mb-36 md:mb-8 px-4 md:px-0">
         <div className="flex flex-col w-full md:w-1/2 space-y-20">
-          {sections.map((section) => (
+          {/* {sections.map((section) => ( */}
+          {sectionsWithRefs.map((section, index) => (
             <div
               key={section.id}
-              ref={section.ref.ref}
+              // ref={section.ref.ref}
+              ref={section.ref}
               className="md:py-10 py-0 md:pl-24 pl-0"
             >
               <div className="flex space-x-1 md:space-x-12 mb-2 md:mb-36">
