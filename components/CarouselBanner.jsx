@@ -148,7 +148,7 @@ const CarouselBanner = () => {
               Driven by the central theme &apos;Forging Foundations for the
               Future, Decentraland&apos;s primary focus in 2024 will be the
               release of a new, powerful Desktop Client capable of supporting
-              the platform's growth and future expansion into VR & mobile.
+              the platform&apos;s growth and future expansion into VR & mobile.
             </p>
             <div className="bg-[#ff2d55] border-[#ff2d55] w-full md:w-[200px] py-4 text-center rounded-[10px] transition duration-150 ease-in-out transform hover:-translate-y-1 cursor-pointer">
               <p className="text[16px] font-semibold uppercase">

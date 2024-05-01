@@ -43,15 +43,15 @@ const Questions = () => {
           Decentraland as a guest. If you make an account you can permanently
           save your avatar for return visits, make Event listings, claim free
           Wearables at events, try out different Wearables & Emotes in the
-          Marketplace, and buy your favorites. If you do&apos;t already have a
+          Marketplace, and buy your favorites. If you don&apos;t already have a
           crypto wallet to connect to your account, you can get one quickly and
           at no cost, it&apos;s as easy as signing up for a new email. Learn
           more here. <br /> <br />
           Step 3: Customize Your Avatar Once you enter Decentraland you&apos;ll
           first be asked to customize your avatar to represent the metaverse
-          version of yourself (be whoever you want to be!). If you can’t find
-          what you&apos;re looking for in the free starter options, take a look
-          in the Marketplace and browse community creations for the perfect
+          version of yourself (be whoever you want to be!). If you can&apos;t
+          find what you&apos;re looking for in the free starter options, take a
+          look in the Marketplace and browse community creations for the perfect
           outfit. <br /> <br />
           Step 4: Familiarize Yourself with the Basics & Explore After
           completing a quick tutorial on how to control your avatar,
@@ -65,7 +65,7 @@ const Questions = () => {
           (Commands you type into the chat box and hit &apos;Enter&apos;) /goto
           xx,xx (e.g. /goto 47,-110): Teleports you to specific coordinates
           /goto crowd: Teleports you to a random busy area /help: Lists all
-          other available commands Step 5: Have fun! You're all set. Walk
+          other available commands Step 5: Have fun! You&apos;re all set. Walk
           around, talk to others via the chat box on the bottom left, and pop
           into some events!
         </p>
