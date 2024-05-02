@@ -1,16 +1,17 @@
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import { useInView } from "react-intersection-observer";
 
-export function UseMultipleView(count, options) {
-  const refs = useRef([...Array(count)].map(() => React.createRef()));
+export function UseMultipleView(maxCount, options) {
+  const refs = useRef([...Array(maxCount)].map(() => React.createRef()));
 
-  // Apply `useInView` to each ref
-  const inViews = refs.current.map((ref) =>
-    useInView({
-      ...options,
-      ref: ref,
-    })
-  );
+  const views = useMemo(() => {
+    return refs.current.map((ref) =>
+      useInView({
+        ...options,
+        ref: ref.current,
+      })
+    );
+  }, [options]); // dependencies should include any dynamic values from `options`
 
-  return inViews;
+  return views;
 }
