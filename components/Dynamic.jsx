@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, useMemo } from "react";
-// import { useInView } from "react-intersection-observer";
-import { UseMultipleView } from "./UseMultipleView";
+import { useInView } from "react-intersection-observer";
+// import { UseMultipleView } from "./UseMultipleView";
 import Image from "next/image";
 
 const Dynamic = () => {
@@ -37,47 +37,27 @@ const Dynamic = () => {
 
   const [currentImage, setCurrentImage] = useState(sections[0].src);
 
-  // sections.forEach((section) => {
-  //   section.ref = useInView({
-  //     threshold: 0.5,
-  //   });
-  // });
-
-  // useEffect(() => {
-  //   const inViewSection = sections.find((section) => section.ref.inView);
-  //   if (inViewSection) {
-  //     setCurrentImage(inViewSection.src);
-  //   }
-  // }, [sections]);
-
-  // const sectionRefs = UseMultipleView(sections.length, { threshold: 0.5 });
-
-  // useEffect(() => {
-  //   const inViewSection = sectionRefs.find((ref) => ref.inView);
-  //   if (inViewSection) {
-  //     setCurrentImage(sections[sectionRefs.indexOf(inViewSection)].src);
-  //   }
-  // }, [sectionRefs]); // Only re-run the effect if sectionRefs change
-
-  const sectionRefs = UseMultipleView(sections.length, { threshold: 0.5 });
+  sections.forEach((section) => {
+    section.ref = useInView({
+      threshold: 0.5,
+    });
+  });
 
   useEffect(() => {
-    const inViewSection = sectionRefs.find((ref) => ref.inView);
+    const inViewSection = sections.find((section) => section.ref.inView);
     if (inViewSection) {
-      setCurrentImage(sections[sectionRefs.indexOf(inViewSection)].src);
+      setCurrentImage(inViewSection.src);
     }
-  }, [sectionRefs]); // Only re-run the effect if sectionRefs change
+  }, [sections]);
 
   return (
     <>
       <div className="flex flex-row md:pt-2 py-0 mb-36 md:mb-8 px-4 md:px-0">
         <div className="flex flex-col w-full md:w-1/2 space-y-20">
-          {/* {sections.map((section) => ( */}
-          {sections.map((section, index) => (
+          {sections.map((section) => (
             <div
               key={section.id}
-              // ref={section.ref.ref}
-              ref={sectionRefs[index].ref}
+              ref={section.ref.ref}
               className="md:py-10 py-0 md:pl-24 pl-0"
             >
               <div className="flex space-x-1 md:space-x-12 mb-2 md:mb-36">
